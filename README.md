@@ -4,7 +4,7 @@
 
 It includes tools for:
 
-- Option pricing (Black-Scholes, Heston, Binomial Trees)
+- Option pricing (Black-Scholes, Heston, Binomial Trees, ...)
 - Greeks computation
 - Delta hedging simulation
 - Volatility estimation
