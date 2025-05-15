@@ -14,9 +14,5 @@ It includes tools for:
 
 ## 📦 Installation
 
-Clone the repository and install in editable mode:
-
 ```bash
-git clone https://github.com/yassine-housseine/ysk_quantlib.git
-cd ysk_quantlib
-pip install -e .
+pip install git+https://github.com/Yaskoi/ysk_quantlib.git
