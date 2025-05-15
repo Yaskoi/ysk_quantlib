@@ -1,5 +1,4 @@
 # ysk_quantlib/__init__.py
-# Empty but required to treat the folder as a Python package
 
 from .pricing import black_scholes_price, binomial_tree_pricing, monte_carlo_pricing, heston_price
 from .bs_greeks import delta, gamma, vega, theta, rho, volga, charm
