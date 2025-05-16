@@ -9,6 +9,7 @@ It includes tools for:
 - Delta hedging simulation
 - Volatility estimation
 - Stationarity and cointegration tests
+- Portfolio Analysis
 
 ---
 
