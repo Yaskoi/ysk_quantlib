@@ -158,21 +158,43 @@ def pp_test(y, alpha=0.05, verbose=True):
     }
 
 def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
-    """[Documentation for granger_causality_test]"""
-    # Perform Granger causality test
-    granger_result = grangercausalitytests(y, x, max_lags, verbose=False)
+    """
+    Test de causalité de Granger : est-ce que x "cause" y ?
+    
+    Paramètres :
+        y (pd.Series): série dépendante
+        x (pd.Series): série explicative
+        max_lags (int): nombre maximal de retards à tester
+        alpha (float): seuil de significativité
+        verbose (bool): afficher les résultats
+        
+    Retourne :
+        dict: lag optimal, p-valeur, conclusion de causalité
+    """
+    # Fusionner les deux séries en un DataFrame
+    data = pd.concat([y, x], axis=1)
+    data.columns = ['y', 'x']
+    data = data.dropna()
+
+    # Effectuer le test
+    granger_result = grangercausalitytests(data[['y', 'x']], maxlag=max_lags, verbose=False)
+
+    # Trouver le meilleur lag selon la plus petite p-value
     best_lag = min(granger_result, key=lambda k: granger_result[k][0]['ssr_ftest'][1])
     p_value = granger_result[best_lag][0]['ssr_ftest'][1]
     is_causal = p_value < alpha
+
     if verbose:
         print(f"Lag optimal: {best_lag}")
         print(f"p-valeur: {p_value:.4f}")
         print(f"Conclusion: {'✅ Causal' if is_causal else '❌ No causal'}")
+
     return {
         'best_lag': best_lag,
         'p_value': p_value,
         'is_causal': is_causal
     }
+
 
 def jarque_bera_test(y, alpha=0.05, verbose=True):
     """[Documentation for jarque_bera_test]"""
