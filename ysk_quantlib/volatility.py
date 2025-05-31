@@ -16,7 +16,7 @@ def implied_volatility(market_price, S, K, T, r, option_type='call'):
     # Use Brent's method to find the root of the error function    
     implied_vol = brentq(error_function, 1e-6, 5.0)  # Volatility bounds: [0.000001, 5.0]
 
-    return implied_vol
+    print(f"Implied Volatility of {option_type} option: {implied_vol}")  # Debug print statement
 
 
 def historical_volatility(prices, window=252):
@@ -26,7 +26,10 @@ def historical_volatility(prices, window=252):
     """
 
     returns = np.log(prices / prices.shift(1))  # Log returns
-    return np.std(returns, ddof=1) * np.sqrt(252)  # Annualized volatility
+    result = np.std(returns, ddof=1) * np.sqrt(window)  # Historical volatility over the window
+    result_2 = np.std(returns, ddof=1) * np.sqrt(252)  # Annualized historical volatility over the window
+    print(f"Historical Volatility of {prices.name}: {result}")  # Debug print statement
+    print(f"Annualized Historical Volatility of {prices.name}: {result_2}")  # Debug print statement
 
 
 def realized_volatility(prices, window=252):
@@ -35,4 +38,8 @@ def realized_volatility(prices, window=252):
     """
 
     returns = np.log(prices / prices.shift(1))  # Log returns
-    return np.std(returns[-window:], ddof=1) * np.sqrt(252)  # Annualized volatility over the window
+    result = np.std(returns[-window:], ddof=1) * np.sqrt(window)  # Annualized volatility over the window
+    
+    print(f"Realized Volatility of {prices.name}: {result}")  # Debug print statement
+
+# end of volatility.py
