@@ -78,9 +78,9 @@ def adf_test(y, alpha=0.05, verbose=True):
             "✅ Stationnaire" if is_stationary else "❌ Non stationnaire"
         ]
     }, index=[
-        "Statistique ADF",
-        "p-valeur",
-        "Retards utilisés",
+        "ADF Stat",
+        "p-value",
+        "Lags Used",
         "Observations",
         "Critique 1%",
         "Critique 5%",
@@ -195,7 +195,6 @@ def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
         'is_causal': is_causal
     }
 
-
 def jarque_bera_test(y, alpha=0.05, verbose=True):
     """[Documentation for jarque_bera_test]"""
     # Perform Jarque-Bera test
@@ -225,4 +224,5 @@ def shapiro_wilk_test(y, alpha=0.05, verbose=True):
         'sw_p_value': sw_p_value,
         'is_normal': is_normal
     }
+
 # End of file stats.py
