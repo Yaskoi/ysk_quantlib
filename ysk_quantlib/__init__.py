@@ -21,7 +21,7 @@ __all__ = [
     ]
 
 # Version of the package
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Author of the package
 __author__ = "Yassine Housseine"
