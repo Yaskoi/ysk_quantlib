@@ -160,7 +160,7 @@ def pp_test(y, alpha=0.05, verbose=True):
 def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
     """[Documentation for granger_causality_test]"""
     # Perform Granger causality test
-    granger_result = grangercausalitytests(y, max_lags, verbose=False)
+    granger_result = grangercausalitytests(y, x, max_lags, verbose=False)
     best_lag = min(granger_result, key=lambda k: granger_result[k][0]['ssr_ftest'][1])
     p_value = granger_result[best_lag][0]['ssr_ftest'][1]
     is_causal = p_value < alpha
