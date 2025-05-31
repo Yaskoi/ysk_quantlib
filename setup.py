@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ysk_quantlib',
-    version='0.1',
+    version='0.1.1',
     description='Quant finance library: pricing, greeks, hedging, stats',
     author='Yassine Housseine',
     author_email='yassine.housseine2@gmail.com',
