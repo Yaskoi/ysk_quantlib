@@ -1,7 +1,7 @@
 import pandas as pd  # type: ignore
 from statsmodels.tsa.stattools import coint, adfuller, kpss, grangercausalitytests, acf  # type: ignore
 from arch.unitroot import PhillipsPerron
-from scipy.stats import jarque_bera, shapiro  # type: ignore
+from scipy.stats import jarque_bera, shapiro, probplot  # type: ignore
 
 
 def cointegration_test(y1, y2, alpha=0.05, verbose=True):
