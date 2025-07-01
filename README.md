@@ -1,6 +1,6 @@
 # 🧠 ysk_quantlib
 
-`ysk_quantlib` is a custom quantitative finance library built by Yassine Housseine for research, learning, and prototyping in derivatives pricing, risk management, and time series modeling. It's more of student project than a real library, essentially used for my own projects.
+`ysk_quantlib` is a custom quantitative finance library built by Yassine Housseine for research, learning, and prototyping in derivatives pricing, risk management, and time series modeling. It's more of student project than a real library, essentially used for my own projects. My goal here is to have a tool that simplifies the intermediate steps of my projects with easy-to-use features, so I can get clear results and crisp graphics.
 
 It includes tools for:
 
