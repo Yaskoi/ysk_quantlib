@@ -227,7 +227,7 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
 
         # Histogram with KDE
         sns.histplot(y, bins=30, kde=True, color='steelblue', ax=axes[0])
-        axes[0].set_title(f"{title_prefix}Distribution Histogram")
+        axes[0].set_title(f"{title_prefix }Distribution Histogram")
         axes[0].set_xlabel("Values")
         axes[0].set_ylabel("Frequency")
         axes[0].text(0.95, 0.95, 
@@ -240,9 +240,9 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
                      horizontalalignment='right',
                      bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
-        # QQ plot
+        # QQQ plot
         probplot(y, dist="norm", plot=axes[1])
-        axes[1].set_title(f"{title_prefix}QQ Plot")
+        axes[1].set_title(f"{title_prefix} QQQ Plot")
 
         plt.tight_layout()
         plt.show()
