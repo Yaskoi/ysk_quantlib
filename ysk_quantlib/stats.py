@@ -42,8 +42,6 @@ def cointegration_test(y1, y2, alpha=0.05, verbose=True):
         else:
             print(f"❌ The series are not cointegrated at the {int(alpha*100)}% level.")
 
-    return result
-
 
 def adf_test(y, alpha=0.05, verbose=True):
     """
