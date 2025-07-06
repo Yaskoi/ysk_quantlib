@@ -241,8 +241,9 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
         # QQQ plot
         probplot(y, dist="norm", plot=axes[1])
         axes[1].set_title(f"{title_prefix} QQQ Plot")
-
         plt.tight_layout()
+        plt.grid(True)
+        plt.label(loc=0)
         plt.show()
 
     return {
