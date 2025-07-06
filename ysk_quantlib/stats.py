@@ -237,10 +237,5 @@ def shapiro_wilk_test(y, alpha=0.05, verbose=True):
         print(f"Statistique SW: {sw_stat:.4f}")
         print(f"p-valeur: {sw_p_value:.4f}")
         print(f"Conclusion: {'✅ Normal' if is_normal else '❌ No normal'}")
-    return {
-        'sw_stat': sw_stat,
-        'sw_p_value': sw_p_value,
-        'is_normal': is_normal
-    }
 
 # End of file stats.py
