@@ -246,12 +246,6 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
         plt.label(loc=0)
         plt.show()
 
-    return {
-        'jb_stat': jb_stat,
-        'jb_p_value': jb_p_value,
-        'is_normal': is_normal
-    }
-
 def shapiro_wilk_test(y, alpha=0.05, verbose=True):
     """[Documentation for shapiro_wilk_test]"""
     # Perform Shapiro-Wilk test
