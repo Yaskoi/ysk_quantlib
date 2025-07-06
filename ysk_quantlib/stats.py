@@ -225,7 +225,7 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
 
         # Histogram with KDE
         sns.histplot(y, bins=30, kde=True, color='steelblue', ax=axes[0])
-        axes[0].set_title(f"{title_prefix }Distribution Histogram")
+        axes[0].set_title(f"{title_prefix} Distribution Histogram")
         axes[0].set_xlabel("Values")
         axes[0].set_ylabel("Frequency")
         axes[0].text(0.95, 0.95, 
