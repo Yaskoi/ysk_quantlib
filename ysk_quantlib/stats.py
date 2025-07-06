@@ -91,13 +91,6 @@ def adf_test(y, alpha=0.05, verbose=True):
     if verbose:
         print(df_result)
 
-    return {
-        'test_statistic': test_stat,
-        'p_value': p_value,
-        'critical_values': crit_vals,
-        'is_stationary': is_stationary
-    }, df_result
-
 def kpss_test(y, alpha=0.05, verbose=True):
     """[Documentation for kpss_test]"""
     
@@ -127,12 +120,6 @@ def kpss_test(y, alpha=0.05, verbose=True):
     df_result.loc['Conclusion'] = "✅ Stationnaire" if is_stationary else "❌ Non stationnaire"
     if verbose:
         print(df_result)
-    return {
-        'test_statistic': test_stat,
-        'p_value': p_value,
-        'critical_values': crit_vals,
-        'is_stationary': is_stationary
-    }, df_result
 
 def pp_test(y, alpha=0.05, verbose=True):
     """[Documentation for pp_test]"""
@@ -189,11 +176,6 @@ def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
         print(f"p-valeur: {p_value:.4f}")
         print(f"Conclusion: {'✅ Causal' if is_causal else '❌ No causal'}")
 
-    return {
-        'best_lag': best_lag,
-        'p_value': p_value,
-        'is_causal': is_causal
-    }
 
 def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
     """
