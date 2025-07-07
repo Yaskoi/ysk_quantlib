@@ -225,7 +225,7 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
         axes[1].set_title(f"{title_prefix} QQQ Plot")
         plt.tight_layout()
         plt.grid(True)
-        plt.label(loc=0)
+        plt.legend(loc=0)
         plt.show()
 
 def shapiro_wilk_test(y, alpha=0.05, verbose=True):
