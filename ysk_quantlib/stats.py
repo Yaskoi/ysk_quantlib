@@ -220,9 +220,9 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
                      horizontalalignment='right',
                      bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
-        # QQQ plot
+        # QQ plot
         probplot(y, dist="norm", plot=axes[1])
-        axes[1].set_title(f"{title_prefix} QQQ Plot")
+        axes[1].set_title(f"{title_prefix} QQ Plot")
         plt.tight_layout()
         plt.grid(True)
         plt.legend(loc=0)
