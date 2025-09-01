@@ -75,7 +75,7 @@ def adf_test(y, alpha=0.05, verbose=True):
             f"{crit_vals['1%']:.4f}",
             f"{crit_vals['5%']:.4f}",
             f"{crit_vals['10%']:.4f}",
-            "✅ Stationnaire" if is_stationary else "❌ Non stationnaire"
+            "✅ Stationnary" if is_stationary else "❌ No stationnary"
         ]
     }, index=[
         "ADF Stat",
@@ -117,7 +117,7 @@ def kpss_test(y, alpha=0.05, verbose=True):
         "Critique 10%",
         "Conclusion"
     ])
-    df_result.loc['Conclusion'] = "✅ Stationnaire" if is_stationary else "❌ Non stationnaire"
+    df_result.loc['Conclusion'] = "✅ Stationnary" if is_stationary else "❌ Non stationnary"
     if verbose:
         print(df_result)
 
@@ -132,10 +132,10 @@ def pp_test(y, alpha=0.05, verbose=True):
 
     is_stationary = p_value < alpha
     if verbose:
-        print(f"Statistique PP: {test_stat:.4f}")
-        print(f"p-valeur: {p_value:.4f}")
-        print(f"Retards utilisés: {lags}")
-        print(f"Critique 10%: {crit_vals['10%']:.4f}")
+        print(f"PP statistic: {test_stat:.4f}")
+        print(f"p-value: {p_value:.4f}")
+        print(f"Lags used: {lags}")
+        print(f"10% critic: {crit_vals['10%']:.4f}")
         print(f"Conclusion: {'✅ Stationary' if is_stationary else '❌ No stationary'}")
     return {
         'test_statistic': test_stat,
@@ -239,3 +239,4 @@ def shapiro_wilk_test(y, alpha=0.05, verbose=True):
         print(f"Conclusion: {'✅ Normal' if is_normal else '❌ No normal'}")
 
 # End of file stats.py
+
