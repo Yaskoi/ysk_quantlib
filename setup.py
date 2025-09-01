@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='ysk_quantlib',
-    version='0.1.1',
-    description='Quant finance library: pricing, greeks, hedging, stats',
+    version='0.2.0',
+    description='Quant finance library: pricing, greeks, hedging, stats, technical analysis, etc.',
     author='Yassine Housseine',
     author_email='yassine.housseine2@gmail.com',
     url='https://github.com/yassine-housseine/ysk_quantlib',
@@ -27,3 +27,4 @@ setup(
 # I'm sharing it here because it might be useful to someone else.
 
 # End of file setup.py
+
