@@ -5,10 +5,7 @@ from .bs_greeks import delta, gamma, vega, theta, rho, volga, charm
 from .hedging import simulate_delta_hedge, compute_hedging_error, hedging_summary, simulate_greeks_over_time
 from .volatility import implied_volatility, historical_volatility, realized_volatility
 from .stats import cointegration_test, adf_test, pp_test, kpss_test, granger_causality_test, jarque_bera_test, shapiro_wilk_test
-from .portfolio import PortfolioAnalysis
-# from .risk import ValueAtRisk, ConditionalValueAtRisk
-# from .optimization import mean_variance_optimization
-# from .visualization import plot_prices, plot_volatility_smile, plot_greeks_over_time
+from .tech_analysis import *
 
 
 __all__ = [
@@ -17,13 +14,14 @@ __all__ = [
     'simulate_delta_hedge', 'compute_hedging_error', 'hedging_summary',
     'implied_volatility', 'historical_volatility', 'realized_volatility',
     'cointegration_test', 'adf_test', 'pp_test', 'kpss_test', 'granger_causality_test', 'jarque_bera_test', 'shapiro_wilk_test',
-    'PortfolioAnalysis'
+    'SMA', 'RSI', 'MACD', 'BBands', 'ATR', 'KAMA', 'ADX', 'Parabolic_SAR', 'stoch_oscillator', 'CCI', 'VWAP', 'VWAP_intraday', 'Ichimoku'
     ]
 
 # Version of the package
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 # Author of the package
 __author__ = "Yassine Housseine"
 
 # End of file __init__.py
+
