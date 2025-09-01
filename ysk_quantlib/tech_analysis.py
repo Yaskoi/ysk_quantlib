@@ -67,15 +67,20 @@ def ATR(series, period=14):
     return ATR
 
 def KAMA(series, n=14, fastest=2, slowest=30):
-    
-    ER = abs(series - series.shift(n)) / series.diff().abs().rolling(window=n).sum()
+    # Calcul de l'ER
+    change = series - series.shift(n)
+    volatility = series.diff().abs().rolling(n).sum()
+    ER = change.abs() / volatility
+    ER = ER.fillna(0)
 
-    smoothing_constant = (ER * (fastest - slowest) + slowest) ** 2
+    fastest_sc = 2 / (fastest + 1)
+    slowest_sc = 2 / (slowest + 1)
+    smoothing_constant = (ER * (fastest_sc - slowest_sc) + slowest_sc) ** 2
 
-    kama = pd.Series(index=series.index)
-    kama.iloc[0] = series.iloc[0]
+    kama = pd.Series(index=series.index, dtype=float)
+    kama.iloc[n] = series.iloc[n]
 
-    for t in range(1, len(series)):
+    for t in range(n+1, len(series)):
         kama.iloc[t] = kama.iloc[t-1] + smoothing_constant.iloc[t] * (series.iloc[t] - kama.iloc[t-1])
 
     return kama
@@ -217,3 +222,4 @@ def Ichimoku(series, n1=9, n2=26, n3=52):
     chikou = close.shift(n2)
 
     return tenkan, kijun, span_a, span_b, chikou
+
