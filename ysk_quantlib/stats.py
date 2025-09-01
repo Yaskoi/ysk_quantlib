@@ -178,34 +178,22 @@ def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
 
 
 def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
-    """
-    Performs the Jarque-Bera test and optionally displays histogram and QQ plot.
+    from scipy.stats import jarque_bera, probplot
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
-    Parameters:
-    - y : array-like, the data to test
-    - alpha : significance level for the test
-    - verbose : bool, whether to print test results
-    - plot : bool, whether to display the plots
-    - title_prefix : str, prefix for the plot titles
-
-    Returns:
-    - dict : containing jb_stat, jb_p_value, and is_normal
-    """
-    # Perform Jarque-Bera test
     jb_stat, jb_p_value = jarque_bera(y)
     is_normal = jb_p_value > alpha
 
-    # Console output
     if verbose:
         print(f"Jarque-Bera Statistic: {jb_stat:.4f}")
         print(f"p-value: {jb_p_value:.4f}")
         print(f"Conclusion: {'✅ Normally distributed' if is_normal else '❌ Not normally distributed'}")
 
-    # Plotting
     if plot:
         fig, axes = plt.subplots(1, 2, figsize=(18, 6))
 
-        # Histogram with KDE
+        # Histogram
         sns.histplot(y, bins=30, kde=True, color='steelblue', ax=axes[0])
         axes[0].set_title(f"{title_prefix} Distribution Histogram")
         axes[0].set_xlabel("Values")
@@ -223,10 +211,16 @@ def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
         # QQ plot
         probplot(y, dist="norm", plot=axes[1])
         axes[1].set_title(f"{title_prefix} QQ Plot")
+
         plt.tight_layout()
-        plt.grid(True)
-        plt.legend(loc=0)
         plt.show()
+
+    return {
+        "jb_stat": jb_stat,
+        "jb_p_value": jb_p_value,
+        "is_normal": is_normal
+    }
+
 
 def shapiro_wilk_test(y, alpha=0.05, verbose=True):
     """[Documentation for shapiro_wilk_test]"""
@@ -239,4 +233,5 @@ def shapiro_wilk_test(y, alpha=0.05, verbose=True):
         print(f"Conclusion: {'✅ Normal' if is_normal else '❌ No normal'}")
 
 # End of file stats.py
+
 
