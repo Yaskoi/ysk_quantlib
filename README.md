@@ -1,15 +1,13 @@
 # 🧠 ysk_quantlib
 
-`ysk_quantlib` is a custom quantitative finance library built by Yassine Housseine for research, learning, and prototyping in derivatives pricing, risk management, and time series modeling. It's more of student project than a real library, essentially used for my own projects. My goal here is to have a tool that simplifies the intermediate steps of my projects with easy-to-use features, so I can get clear results and crisp graphics.
-
-It includes tools for:
+`ysk_quantlib` is a custom quantitative finance library that I designed to simplify the intermediate steps of my projects with easy-to-use features that produce clear results and clean graphs. It's not really an efficiently coded library, and I probably haven't optimized it for computational speed, but I'm not a quant developer, efficient coding isn't my thing, and if it works, I'm fine with it as it is. But I published it because it's an easy-to-use tool, and I'm open to any suggestions for improvement. So the library includes tools for:
 
 - Option pricing (Black-Scholes, Heston, Binomial Trees, ...)
 - Greeks computation
 - Delta hedging simulation
 - Volatility estimation
 - Stationarity and cointegration tests
-- Portfolio Analysis
+- Technical Analysis
 
 ---
 
