@@ -178,10 +178,6 @@ def granger_causality_test(y, x, max_lags=10, alpha=0.05, verbose=True):
 
 
 def jarque_bera_test(y, alpha=0.05, verbose=True, plot=True, title_prefix=""):
-    from scipy.stats import jarque_bera, probplot
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
     jb_stat, jb_p_value = jarque_bera(y)
     is_normal = jb_p_value > alpha
 
@@ -233,5 +229,6 @@ def shapiro_wilk_test(y, alpha=0.05, verbose=True):
         print(f"Conclusion: {'✅ Normal' if is_normal else '❌ No normal'}")
 
 # End of file stats.py
+
 
 
